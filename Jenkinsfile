@@ -80,16 +80,13 @@ pipeline {
             }
         }
 
-    post {
-        failure{
-              mail to: 'yucyrusyu@gmail.com',
-          subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
-          body: "Something is wrong with ${env.BUILD_URL}"
+    }
+
+        post {
+            failure{
+                  mail to: 'yucyrusyu@gmail.com',
+              subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
+              body: "Something is wrong with ${env.BUILD_URL}"
+            }
         }
-    }
-
-
-
-
-    }
 }
